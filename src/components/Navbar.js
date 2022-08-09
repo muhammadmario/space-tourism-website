@@ -9,7 +9,7 @@ function Navbar() {
   const [menu, setMenu] = useState(false);
   return (
     <>
-      <nav className="fixed w-screen flex justify-between px-6 py-6 items-center md:py-0 md:px-0">
+      <nav className="fixed w-screen flex justify-between px-6 py-6 items-center md:py-0 md:px-0 z-50">
         <Link to="/">
           <img className="h-10 w-10 md:ml-6 lg:ml-14" src={logo} alt="logo" />
         </Link>
