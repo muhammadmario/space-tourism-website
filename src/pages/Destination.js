@@ -77,13 +77,14 @@ function Destination() {
           >
             {destinations &&
               destinations.map((destination, index) => (
-                <button
-                  type="button"
+                <div
                   onClick={() => setDestinationId(index)}
-                  className="py-2 px-4 text-sm uppercase font-medium text-gray-900 bg-transparent rounded-l-lg  hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white  dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+                  className={` ${
+                    destinationId === index ? "border-b-2" : ""
+                  } cursor-pointer py-2 px-4 text-sm uppercase font-medium text-gray-900 bg-transparent  hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white  dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700`}
                 >
                   {destination.name}
-                </button>
+                </div>
               ))}
           </div>
           <h1 className="uppercase font-bellefair text-xl mt-[20px] md:mt-8 md:text-[80px] lg:self-start lg:text-xxl">

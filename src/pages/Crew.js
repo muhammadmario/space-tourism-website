@@ -15,7 +15,7 @@ function Crew() {
 
   const fetchCrew = async () => {
     const response = await axios.get("/crew");
-    console.log(response.data);
+    // console.log(response.data);
     setCrews(response.data);
   };
 
@@ -94,7 +94,7 @@ function Crew() {
             {crews &&
               crews.map((crew, index) => (
                 <span
-                  className="text-third text-xxl opacity-75 cursor-pointer"
+                  className="text-third text-xxl cursor-pointer"
                   onClick={() => setCrewId(index)}
                 >
                   .

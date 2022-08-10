@@ -3,16 +3,16 @@ import { useState } from "react";
 import logo from "../img/shared/logo.svg";
 import iconHamburger from "../img/shared/icon-hamburger.svg";
 import iconClose from "../img/shared/icon-close.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
   return (
     <>
       <nav className="fixed w-screen flex justify-between px-6 py-6 items-center md:py-0 md:px-0 z-50">
-        <Link to="/">
+        <NavLink to="/">
           <img className="h-10 w-10 md:ml-6 lg:ml-14" src={logo} alt="logo" />
-        </Link>
+        </NavLink>
         <img
           onClick={() => setMenu(!menu)}
           className={`transition ease-in-out delay-150 z-10 md:hidden  ${
@@ -26,7 +26,10 @@ function Navbar() {
             menu ? "translate-x-0" : "translate-x-full "
           } `}
         >
-          <Link to="/">
+          <NavLink
+            to="/"
+            className={(data) => (data.isActive ? "border-b-2" : "")}
+          >
             <li
               className="cursor-pointer lg:text-sm"
               onClick={() => setMenu(!menu)}
@@ -34,27 +37,36 @@ function Navbar() {
               <span className="font-bold pr-2 md:hidden lg:inline ">00</span>
               Home
             </li>
-          </Link>
+          </NavLink>
 
-          <Link to="/destination">
+          <NavLink
+            to="/destination"
+            className={(data) => (data.isActive ? "border-b-2" : "")}
+          >
             <li className="cursor-pointer">
               <span className="font-bold pr-2 md:hidden lg:inline">01</span>
               Destination
             </li>
-          </Link>
+          </NavLink>
 
-          <Link to="/crew">
+          <NavLink
+            to="/crew"
+            className={(data) => (data.isActive ? "border-b-2" : "")}
+          >
             <li className="cursor-pointer">
               <span className="font-bold pr-2 md:hidden lg:inline">02</span>Crew
             </li>
-          </Link>
+          </NavLink>
 
-          <Link to="/technology">
+          <NavLink
+            to="/technology"
+            className={(data) => (data.isActive ? "border-b-2" : "")}
+          >
             <li className="cursor-pointer">
               <span className="font-bold pr-2 md:hidden lg:inline">03</span>
               Technology
             </li>
-          </Link>
+          </NavLink>
         </ul>
       </nav>
     </>

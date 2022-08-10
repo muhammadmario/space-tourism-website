@@ -39,9 +39,12 @@ function Home() {
       </div>
       <div className="flex justify-center items-center w-full lg:w-1/2 lg:mt-32">
         <div className="rounded-full bg-third w-40 h-40 flex justify-center items-center mt-11 md:w-[242px] md:h-[242px] lg:mt-0 lg:w-[274px] lg:h-[274px]">
-          <p className="uppercase text-primary font-bellefair text-[20px] lg:text-lg">
+          <a
+            href="/destination"
+            className="uppercase text-primary font-bellefair text-[20px] lg:text-lg"
+          >
             explore
-          </p>
+          </a>
         </div>
       </div>
     </section>
